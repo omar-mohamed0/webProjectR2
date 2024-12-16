@@ -1,0 +1,329 @@
+/* styles.css */
+
+/* General body styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f9f4; /* Light greenish-white */
+    color: #2d4739; /* Deep green */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Main Content */
+.content {
+    padding: 20px;
+    text-align: center;
+    background-color: #f0f9f4; /* Light greenish-white */
+    min-height: 70vh;
+}
+
+main {
+    flex: 1; /* Makes main take up the remaining space */
+    padding: 20px;
+    display: flex;
+    flex-direction: column; /* Default layout for smaller screens */
+}
+
+/* Container for the login form */
+form {
+    max-width: 400px;
+    margin: 50px auto;
+    background: #ffffff; /* White background */
+    border: 2px solid #a1c6a7; /* Soft green border */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+/* Form labels and inputs */
+label {
+    font-size: 1rem;
+    margin-bottom: 5px;
+    display: block;
+    color: #2d4739; /* Dark green */
+}
+
+input[type="text"], input[type="password"] {
+    width: 90%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #a1c6a7; /* Light green border */
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+select {
+    width: 90%; /* Same as input fields */
+    padding: 12px; /* Inner padding */
+    margin-bottom: 15px; /* Spacing between elements */
+    border: 1px solid #a1c6a7; /* Light green border */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 1rem; /* Font size */
+    background-color: #ffffff; /* White background */
+    color: #2d4739; /* Dark green text color */
+    appearance: none; /* Remove default styling for consistent look */
+    -webkit-appearance: none; /* Safari-specific reset */
+    -moz-appearance: none; /* Firefox-specific reset */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+    cursor: pointer; /* Make cursor indicate clickable element */
+}
+/* Form button */
+button {
+    background-color: #4a8e5a; /* Muted plant green */
+    color: #ffffff;
+    font-size: 1rem;
+    padding: 12px;
+    width: 100%;
+    border: 2px solid #4a8e5a; /* Same color as background for consistency */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+    background-color: #3a7550; /* Darker green for hover */
+    transform: scale(1.05); /* Slightly bigger on hover */
+}
+
+/* Navigation links and items */
+.nav-link, .nav-item {
+    background-color: #5a9c6e; /* Muted green */
+    color: #ffffff;
+    font-size: 1rem;
+    padding: 8px 12px;
+    border-radius: 5px;
+    display: inline-block;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin: 5px;
+    text-decoration: none;
+}
+
+.nav-link:hover, .nav-item:hover {
+    background-color: #3a7550; /* Darker green for hover */
+    transform: scale(1.05); /* Slightly bigger on hover */
+}
+
+/* Messages styling */
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+li {
+    background: #dff0d8; /* Pale green success background */
+    border: 1px solid #a1c6a7;
+    color: #2d4739;
+    padding: 12px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+
+/* Header styling */
+header {
+    background-color: #5a9c6e; /* Muted green */
+    color: #ffffff;
+    padding: 15px 0;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+h2 {
+    text-align: center;
+    color: #2d4739; /* Deep green */
+    margin-bottom: 20px;
+}
+
+/* Header and Navigation */
+.site-header {
+    background-color: #5a9c6e; /* Muted green */
+    padding: 10px 0;
+    text-align: center;
+    color: #ffffff;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-logo .logo {
+    height: 40px; /* Adjust size as needed */
+}
+
+.navbar-logo {
+    margin-left:40px;
+}
+.username {
+    color: #ffffff;
+    font-size: 1.2rem;
+
+    text-align: center;
+    display: flex;
+    align-items: center; /* Centers vertically */
+    justify-content: center; /* Centers horizontally */
+}
+.nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px;
+    justify-content: right;
+     margin-right: 40px;
+}
+
+.nav-item {
+    margin: 0;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #cfe8d1; /* Light green for hover effect */
+}
+
+
+/* Footer */
+.site-footer {
+    background-color: #2d4739; /* Deep green */
+    color: #ffffff;
+    text-align: center;
+    padding: 15px 0;
+}
+
+
+
+.dashboard {
+    display: flex;
+    gap: 30px; /* Space between the dashboard items */
+}
+
+.dashboard-item {
+    flex: 1; /* Ensures items take full height available */
+    background: #ffffff; /* White background */
+    border: 1px solid #a1c6a7; /* Soft green border */
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+}
+
+.dashboard-item h2 {
+    color: #2d4739; /* Deep green */
+    margin-bottom: 10px;
+}
+
+.users-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.users-list li {
+    background: #dff0d8; /* Pale green success background */
+    border: 1px solid #a1c6a7;
+    color: #2d4739;
+    padding: 12px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.dashboard-item p {
+    color: #2d4739;
+}
+
+.total-users{
+    font-size: 8.5rem; /* Big font size */
+    color: #2d4739; /* Deep green */
+    margin: 0; /* Remove default margin */
+    text-align:center;
+
+}
+
+
+#plants-list {
+        margin: 20px auto;
+        width: 300px;
+        text-align: center;
+        font-size:40px;
+}
+
+
+.image-input {
+    border: 2px dashed #a1c6a7;
+    padding: 10px;
+    margin-bottom: 15px;
+    display: block;
+    width: 100%;
+}
+
+.response-message {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #fce4e4;
+    color: #d32f2f;
+    border-radius: 5px;
+    text-align: center;
+}
+
+
+
+.feature-links {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.feature-item {
+    width: 45%;
+    padding: 20px; /* Increased padding for larger space inside the box */
+    border: 1px solid #ddd;
+    border-radius: 8px; /* Rounded corners for a softer look */
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px; /* Add some spacing between items */
+    transition: box-shadow 0.3s ease-in-out; /* Smooth shadow change on hover */
+}
+
+.feature-item h3 {
+    margin-top: 0;
+    font-size: 1.5em; /* Larger font size */
+}
+
+.feature-item p {
+    color: #555;
+    font-size: 1em; /* Slightly larger font size for better readability */
+}
+
+.feature-item .btn {
+    display: inline-block;
+    width: 80%; /* 80% width */
+    padding: 15px; /* Increased padding for better button size */
+    background-color: #5a9c6e; /* Dark green */
+    color: white;
+    text-align: center; /* Center text inside the button */
+    text-decoration: none;
+    border-radius: 5px; /* Slightly larger border-radius for rounded edges */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease-in-out; /* Smooth changes */
+    font-size: 1.2em; /* Larger font size for the button */
+}
+
+.feature-item .btn:hover {
+    background-color: #45a049; /* Darker green on hover */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* Slightly more prominent shadow on hover */
+}

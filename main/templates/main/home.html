@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Home Page</h2>
+<h1>
+MAIN SERVICES HERE
+</h1>
+
+<div class="feature-links">
+    <div class="feature-item">
+        <h3>Find the Appropriate Plant Type for Your Country</h3>
+        <p>Learn how to choose the right plant that suits your local climate and soil conditions.</p>
+        <a class="btn" href="{% url 'appropriteplants' %}">Find Out</a>
+    </div>
+
+    <div class="feature-item">
+        <h3>Check Your Plant Health</h3>
+        <p>Upload an image of your plant to assess its health and check for diseases or pests.</p>
+        <a  class="btn" href="{% url 'plant_health_check' %}">Check Health</a>
+    </div>
+</div>
+{% endblock %}

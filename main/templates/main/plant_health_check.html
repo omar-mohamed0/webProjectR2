@@ -1,0 +1,101 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2>Check Plant Safety and Health</h2>
+
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="image" class="image-upload">
+            Upload a Plant Image:
+            <input type="file" id="image" name="image" accept="image/*" required>
+        </label>
+        <button type="submit" class="btn">Check Health</button>
+    </form>
+
+    <!-- Container for the response message -->
+    <div id="responseContainer"></div>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const form = document.querySelector('form');
+    const imageInput = document.getElementById('image');
+    const responseContainer = document.getElementById('responseContainer');
+    const imagePreview = document.createElement('img');
+    imagePreview.style.maxWidth = '300px';
+    imagePreview.style.marginTop = '10px';
+
+    if (imageInput) {
+        // Display the image immediately after it's selected
+        imageInput.addEventListener('change', () => {
+            const file = imageInput.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    imagePreview.src = e.target.result;
+                    imageInput.parentElement.appendChild(imagePreview);
+                };
+                reader.readAsDataURL(file);
+            } else {
+                if (imagePreview.parentElement) {
+                    imagePreview.parentElement.removeChild(imagePreview);
+                }
+            }
+        });
+
+        // Handle form submission
+        form.addEventListener('submit', (e) => {
+            e.preventDefault(); // Prevent form submission
+            const file = imageInput.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    imagePreview.src = e.target.result;
+                    imageInput.parentElement.appendChild(imagePreview);
+
+                    // Display response message only after the form submission
+                    displayResponseMessage('Your plant has a pest');
+                };
+                reader.readAsDataURL(file);
+            } else {
+                if (imagePreview.parentElement) {
+                    imagePreview.parentElement.removeChild(imagePreview);
+                }
+                displayResponseMessage('');
+            }
+        });
+    }
+
+    // Function to display response message
+    function displayResponseMessage(message) {
+        if (responseContainer) {
+            const responseMessage = document.createElement('div');
+            responseMessage.id = 'responseMessage';
+            responseMessage.style.transition = 'opacity 0.5s ease-in-out';
+            responseMessage.style.opacity = '1';
+            responseMessage.style.backgroundColor = '#f8d7da'; // Light red background
+            responseMessage.style.color = '#721c24'; // Dark red text color
+            responseMessage.style.padding = '20px';
+            responseMessage.style.borderRadius = '5px';
+            responseMessage.textContent = message;
+
+            responseContainer.appendChild(responseMessage);
+
+            setTimeout(() => {
+                responseMessage.style.opacity = '0';
+                setTimeout(() => {
+                    responseMessage.remove(); // Remove the message from the DOM
+                }, 500);
+            }, 5000); // Display for 5 seconds
+        }
+    }
+
+    // Clear response message on form reset (e.g., page refresh)
+    window.addEventListener('beforeunload', () => {
+        const responseMessage = document.getElementById('responseMessage');
+        if (responseMessage) {
+            responseMessage.style.display = 'none';
+            responseMessage.innerHTML = ''; // Clear the message content
+        }
+    });
+});
+</script>
+{% endblock %}

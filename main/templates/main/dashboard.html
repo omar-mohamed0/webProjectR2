@@ -1,0 +1,38 @@
+<!-- dashboard.html -->
+{% extends "base.html" %}
+
+{% block title %}Dashboard{% endblock %}
+
+
+{% block content %}
+
+  <header class="site-header">
+        <h1>User Dashboard</h1>
+    </header>
+    <main class="content">
+        <div class="dashboard">
+            <div class="dashboard-item">
+                <h2>All Users:</h2>
+                <ul class="users-list">
+                    {% for user in users %}
+                        <li>{{ user.username }} (Joined: on {{ user.date_joined|date:"Y-m-d" }}  at {{ user.date_joined|date:"H:i" }}s )</li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <div class="dashboard-item">
+                {% if users %}
+                    <h2>Total Users:</h2>
+                    <p class="total-users">{{ users|length }}</p> <!-- Display total number of users  -->
+                    {% if last_registered_user %}
+                    <h2>Last Registered User:</h2>
+                    <li>{{ last_registered_user.username }} (Joined: on {{ last_registered_user.date_joined|date:"Y-m-d"  }}  at {{ last_registered_user.date_joined|date:"H:i" }}s  )</li>
+                    {%endif%}
+                {% else %}
+                    <p>No users registered yet.</p>
+                {% endif %}
+
+            </div>
+        </div>
+    </main>
+{% endblock %}

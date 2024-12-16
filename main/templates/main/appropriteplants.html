@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}BEST SEED COUNTRY{% endblock %}
+
+
+{% block content %}
+
+
+<form id="dynamic-form">
+        <h2>Find the best seed to plant</h2>
+        <label for="country">Select a Country:</label>
+        <select id="country" name="country">
+            <option value="">--Select Country--</option>
+            <option value="ksa">KSA</option>
+            <option value="usa">USA</option>
+            <option value="japan">Japan</option>
+        </select>
+
+        <label for="state">Select a region:</label>
+        <select id="state" name="state" disabled>
+            <option value="">--Select region--</option>
+        </select>
+
+        <button type="submit">Show</button>
+    </form>
+    <h1>These are some plants approprite for your region and country:</h1>
+    <div id="plants-list"></div>
+
+
+{% endblock %}
